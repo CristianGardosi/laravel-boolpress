@@ -41,7 +41,7 @@
                             <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-warning">Mostra</a>
                         </td>
                         <td>
-                            <a href="#" class="btn btn-primary">Edita</a>
+                            <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary">Edita</a>
                         </td>
                         <td>
                             <a href="#" class="btn btn-danger">Cancella</a>
