@@ -18,8 +18,11 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@index')->name('home');
+// !NOT AUTH. ROUTES
+// Home
+Route::get('posts', 'HomeController@index')->name('index');
+// Lista dei post
+Route::get('/', 'PostController@index')->name('posts.index');
 
 // !AUTHENTICATION ROUTES
 Auth::routes();

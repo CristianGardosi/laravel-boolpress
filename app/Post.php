@@ -5,10 +5,17 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
-{
+{       
+
+    protected $fillable = [
+        'title',
+        'body',
+        'user_id', 
+        'slug'
+    ];
     
-        // !RELAZIONE 1 - * CON POST
-        public function user() {
-            return $this->belongsTo('App\User');
-        }
+    // !RELAZIONE 1 - * CON POST
+     public function user() {
+        return $this->belongsTo('App\User');
+    }
 }
