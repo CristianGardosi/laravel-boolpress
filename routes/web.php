@@ -20,9 +20,11 @@ use Illuminate\Support\Facades\Auth;
 */
 // !NOT AUTH. ROUTES
 // Home
-Route::get('posts', 'HomeController@index')->name('index');
-// Lista dei post
-Route::get('/', 'PostController@index')->name('posts.index');
+Route::get('/', 'HomeController@index')->name('home');
+// Index lista post
+Route::get('posts', 'PostController@index')->name('posts.index');
+// Dettaglio
+Route::get('posts/{slug}', 'PostController@show')->name('posts.show');
 
 // !AUTHENTICATION ROUTES
 Auth::routes();

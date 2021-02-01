@@ -38,7 +38,7 @@
                             {{ $post->created_at->format('d/m/Y') }}
                         </td>
                         <td>
-                            <a href="#" class="btn btn-warning">Mostra</a>
+                            <a href="{{ route('posts.show', $post->slug) }}" class="btn btn-warning">Mostra</a>
                         </td>
                         <td>
                             <a href="#" class="btn btn-primary">Edita</a>

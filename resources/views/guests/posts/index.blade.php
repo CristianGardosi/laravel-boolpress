@@ -13,7 +13,7 @@
                 <h2>{{$post->title}}</h2>
                 <h3>Scritto da: {{$post->user->name}}</h3>
                 <h4>In data: {{$post->created_at->format('d/m/Y')}}</h4>
-                <a href="">Leggi il post completo</a>
+                <a href="{{ route('posts.show', $post->slug) }}">Leggi il post completo</a>
             </article>
         @endforeach
     @endif
