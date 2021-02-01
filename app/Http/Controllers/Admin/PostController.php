@@ -88,7 +88,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        
+
         return view('admin.posts.edit', compact('post'));
     }
 
@@ -101,7 +101,24 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        // Slug nel caso venisse updatetato
+        $data['slug'] = Str::slug($data['title'], '-');
+
+        $post = Post::find($id);
+
+        $updated = $post->update($data); //Fillable update
+
+        if($updated) {
+            return redirect()->route('posts.show', $post->slug);
+        }
+
     }
 
     /**

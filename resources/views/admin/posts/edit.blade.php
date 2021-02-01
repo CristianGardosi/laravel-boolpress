@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h1 class="mb-3">Crea un nuovo post</h1>
+    <h1 class="mb-3">Edita il post: {{ $post->title }}</h1>
     
     {{-- SEZIONE VISUALIZZAZIONE EVENTUALI ERRORI ALL'INVIO DELLA FORM --}}
     @if ($errors->any())
@@ -29,7 +29,7 @@
             <label for="body">Contenuto del post</label>
             <textarea class="form-control" cols="30" rows="10" id="body" name="body">{{ old('body', $post->body) }}</textarea>
         </div>
-        <input class="btn btn-warning" type="submit" value="Crea il tuo post">
+        <input class="btn btn-warning" type="submit" value="Edita il tuo post">
     </form>
 
 </div>
