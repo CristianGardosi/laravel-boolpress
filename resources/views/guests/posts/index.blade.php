@@ -9,7 +9,7 @@
         <h3>Ancora nessun post è stato creato</h3>
     @else
         @foreach($posts as $post)
-            <article class="mb-3">
+            <article class="mb-5">
                 <h2>{{$post->title}}</h2>
                 <h3>Scritto da: {{$post->user->name}}</h3>
                 <h4>In data: {{$post->created_at->format('d/m/Y')}}</h4>
