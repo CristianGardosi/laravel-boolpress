@@ -9,6 +9,6 @@ class Post extends Model
     
         // !RELAZIONE 1 - * CON POST
         public function user() {
-            return $this->belongsTo('App\Users');
+            return $this->belongsTo('App\User');
         }
 }
